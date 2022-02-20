@@ -1,0 +1,35 @@
+import 'package:flutter/material.dart';
+
+import '../../../constants.dart';
+import '../../../size_config.dart';
+
+class SplashContent extends StatelessWidget {
+  const SplashContent({Key? key, this.text, this.image}) : super(key: key);
+  final String? text, image;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: <Widget>[
+        const Spacer(),
+        Text(
+          "TOKOTO",
+          style: TextStyle(
+              fontSize: getProportionScreenWidth(36),
+              color: PrimaryColor,
+              fontWeight: FontWeight.bold),
+        ),
+        Text(
+          text!,
+          textAlign: TextAlign.center,
+        ),
+        const Spacer(flex: 2),
+        Image.asset(
+          image!,
+          height: getProportionScreenHeight(350),
+          width: getProportionScreenWidth(400),
+        )
+      ],
+    );
+  }
+}
